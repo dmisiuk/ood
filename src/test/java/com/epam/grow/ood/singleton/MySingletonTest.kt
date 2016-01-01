@@ -1,8 +1,7 @@
-package com.epam.grow.odd.singleton
+package com.epam.grow.ood.singleton
 
 import org.testng.AssertJUnit.assertEquals
 import org.testng.annotations.Test
-import singleton.MySingleton
 
 class MySingletonTest {
 

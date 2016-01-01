@@ -1,4 +1,4 @@
-package singleton
+package com.epam.grow.ood.singleton
 
 /**
  * @author Dzmitry Misiuk
