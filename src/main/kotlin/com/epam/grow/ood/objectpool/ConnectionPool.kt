@@ -5,8 +5,8 @@ package com.epam.grow.ood.objectpool
  */
 object ConnectionPool {
 
-    val availableConnections = arrayListOf(Connection(1), Connection(2))
-    val busyConnections = arrayListOf<Connection>()
+    private val availableConnections = arrayListOf(Connection(1), Connection(2))
+    private val busyConnections = arrayListOf<Connection>()
 
     fun acquireConnection(): Connection {
         if (availableConnections.isNotEmpty()) {
@@ -25,5 +25,10 @@ object ConnectionPool {
         } else {
             throw IllegalStateException("this connection is not using with this pool")
         }
+    }
+
+    fun releaseAll() {
+        availableConnections.addAll(busyConnections)
+        busyConnections.clear()
     }
 }
